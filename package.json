@@ -1,0 +1,8 @@
+{
+  "name": "weather-aware-order-delay-processor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20.6" },
+  "scripts": { "start": "node --env-file=.env src/index.js", "test": "node --test", "lint": "node --check src/index.js && node --check src/weather.js && node --check src/orderProcessor.js && node --check src/apology.js && node --check src/ai.js && node --check src/storage.js && node --check tests/orderProcessor.test.js && node --check tests/regressions.test.js" }
+}

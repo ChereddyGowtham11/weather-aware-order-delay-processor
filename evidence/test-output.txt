@@ -1,0 +1,234 @@
+﻿
+> weather-aware-order-delay-processor@1.0.0 test
+> node --test
+
+TAP version 13
+# Subtest: literal delay classification accepts only Rain, Snow, and Extreme
+ok 1 - literal delay classification accepts only Rain, Snow, and Extreme
+  ---
+  duration_ms: 2.6773
+  ...
+# Subtest: all weather lookups overlap and an invalid city does not cancel valid orders
+ok 2 - all weather lookups overlap and an invalid city does not cancel valid orders
+  ---
+  duration_ms: 30.1401
+  ...
+# Subtest: malformed weather response is rejected
+ok 3 - malformed weather response is rejected
+  ---
+  duration_ms: 1.9894
+  ...
+# Subtest: successful retry clears a previous weather error for clear and delayed orders
+ok 4 - successful retry clears a previous weather error for clear and delayed orders
+  ---
+  duration_ms: 4.9052
+  ...
+# Subtest: AI prompt is grounded and failure falls back deterministically
+ok 5 - AI prompt is grounded and failure falls back deterministically
+  ---
+  duration_ms: 0.94
+  ...
+# Subtest: weather client handles HTTP errors and atomic storage writes valid JSON
+ok 6 - weather client handles HTTP errors and atomic storage writes valid JSON
+  ---
+  duration_ms: 99.9198
+  ...
+# Subtest: a synchronous city failure cannot cancel the other lookups
+ok 7 - a synchronous city failure cannot cancel the other lookups
+  ---
+  duration_ms: 10.8954
+  ...
+# Subtest: malformed normalized weather is isolated: null
+ok 8 - malformed normalized weather is isolated: null
+  ---
+  duration_ms: 1.2166
+  ...
+# Subtest: malformed normalized weather is isolated: {}
+ok 9 - malformed normalized weather is isolated: {}
+  ---
+  duration_ms: 0.8125
+  ...
+# Subtest: malformed normalized weather is isolated: {"main":""}
+ok 10 - malformed normalized weather is isolated: {"main":""}
+  ---
+  duration_ms: 1.2423
+  ...
+# Subtest: malformed normalized weather is isolated: {"main":42}
+ok 11 - malformed normalized weather is isolated: {"main":42}
+  ---
+  duration_ms: 0.6915
+  ...
+# Subtest: failed reruns preserve business status, clear stale weather and never mutate input
+ok 12 - failed reruns preserve business status, clear stale weather and never mutate input
+  ---
+  duration_ms: 1.5637
+  ...
+# Subtest: every literal delay category triggers AI while clear weather preserves status
+ok 13 - every literal delay category triggers AI while clear weather preserves status
+  ---
+  duration_ms: 1.2913
+  ...
+# Subtest: the configured AI HTTP client is used by delayed-order processing
+ok 14 - the configured AI HTTP client is used by delayed-order processing
+  ---
+  duration_ms: 54.6854
+  ...
+# Subtest: no provider key selects the deterministic fallback without a request
+ok 15 - no provider key selects the deterministic fallback without a request
+  ---
+  duration_ms: 0.787
+  ...
+# Subtest: unusable provider output falls back safely: {}
+ok 16 - unusable provider output falls back safely: {}
+  ---
+  duration_ms: 2.7769
+  ...
+# Subtest: unusable provider output falls back safely: {"choices":[]}
+ok 17 - unusable provider output falls back safely: {"choices":[]}
+  ---
+  duration_ms: 1.5493
+  ...
+# Subtest: unusable provider output falls back safely: {"choices":[{"message":{"content":42}}]}
+ok 18 - unusable provider output falls back safely: {"choices":[{"message":{"content":42}}]}
+  ---
+  duration_ms: 1.1858
+  ...
+# Subtest: unusable provider output falls back safely: {"choices":[{"message":{"content":""}}]}
+ok 19 - unusable provider output falls back safely: {"choices":[{"message":{"content":""}}]}
+  ---
+  duration_ms: 1.5769
+  ...
+# Subtest: unusable provider output falls back safely: {"choices":[{"message":{"refusal":"refused","content":"No."}}]}
+ok 20 - unusable provider output falls back safely: {"choices":[{"message":{"refusal":"refused","content":"No."}}]}
+  ---
+  duration_ms: 1.4209
+  ...
+# Subtest: HTTP AI failure and timeout both fall back without leaking the key
+ok 21 - HTTP AI failure and timeout both fall back without leaking the key
+  ---
+  duration_ms: 41.2937
+  ...
+# Subtest: nontext and multiple-sentence AI responses are rejected
+ok 22 - nontext and multiple-sentence AI responses are rejected
+  ---
+  duration_ms: 1.0302
+  ...
+# Subtest: AI credentials are not sent to an insecure remote endpoint
+ok 23 - AI credentials are not sent to an insecure remote endpoint
+  ---
+  duration_ms: 0.7997
+  ...
+# Subtest: weather HTTP 401 fails once without retrying
+ok 24 - weather HTTP 401 fails once without retrying
+  ---
+  duration_ms: 3.5149
+  ...
+# Subtest: weather HTTP 403 fails once without retrying
+ok 25 - weather HTTP 403 fails once without retrying
+  ---
+  duration_ms: 0.7053
+  ...
+# Subtest: weather HTTP 404 fails once without retrying
+ok 26 - weather HTTP 404 fails once without retrying
+  ---
+  duration_ms: 0.4203
+  ...
+# Subtest: network and server failures retry within a fixed budget using exponential delays
+ok 27 - network and server failures retry within a fixed budget using exponential delays
+  ---
+  duration_ms: 2.0677
+  ...
+# Subtest: 429 respects bounded Retry-After: "3"
+ok 28 - 429 respects bounded Retry-After: "3"
+  ---
+  duration_ms: 3.6816
+  ...
+# Subtest: 429 respects bounded Retry-After: "Sun, 01 Nov 2026 00:00:02 GMT"
+ok 29 - 429 respects bounded Retry-After: "Sun, 01 Nov 2026 00:00:02 GMT"
+  ---
+  duration_ms: 3.0099
+  ...
+# Subtest: 429 respects bounded Retry-After: "999999"
+ok 30 - 429 respects bounded Retry-After: "999999"
+  ---
+  duration_ms: 1.8435
+  ...
+# Subtest: 429 respects bounded Retry-After: ""
+ok 31 - 429 respects bounded Retry-After: ""
+  ---
+  duration_ms: 1.4439
+  ...
+# Subtest: 429 respects bounded Retry-After: "-1"
+ok 32 - 429 respects bounded Retry-After: "-1"
+  ---
+  duration_ms: 1.3393
+  ...
+# Subtest: 429 respects bounded Retry-After: "invalid"
+ok 33 - 429 respects bounded Retry-After: "invalid"
+  ---
+  duration_ms: 1.0542
+  ...
+# Subtest: 429 respects bounded Retry-After: "0"
+ok 34 - 429 respects bounded Retry-After: "0"
+  ---
+  duration_ms: 0.7824
+  ...
+# Subtest: persistent failure exhausts exactly the configured number of attempts
+ok 35 - persistent failure exhausts exactly the configured number of attempts
+  ---
+  duration_ms: 1.5284
+  ...
+# Subtest: weather timeouts retry and eventually fail with a clear timeout message
+ok 36 - weather timeouts retry and eventually fail with a clear timeout message
+  ---
+  duration_ms: 36.0951
+  ...
+# Subtest: malformed weather payload is not retried: not JSON
+ok 37 - malformed weather payload is not retried: not JSON
+  ---
+  duration_ms: 1.9079
+  ...
+# Subtest: malformed weather payload is not retried: {"weather":[]}
+ok 38 - malformed weather payload is not retried: {"weather":[]}
+  ---
+  duration_ms: 0.7937
+  ...
+# Subtest: weather rejects missing key, empty city and an unbounded retry configuration
+ok 39 - weather rejects missing key, empty city and an unbounded retry configuration
+  ---
+  duration_ms: 1.0335
+  ...
+# Subtest: input validation rejects malformed orders and duplicate identities
+ok 40 - input validation rejects malformed orders and duplicate identities
+  ---
+  duration_ms: 40.5536
+  ...
+# Subtest: concurrent atomic writes produce valid output without temporary-file collisions
+ok 41 - concurrent atomic writes produce valid output without temporary-file collisions
+  ---
+  duration_ms: 36.5577
+  ...
+# Subtest: failed persistence preserves existing data and cleans temporary files
+ok 42 - failed persistence preserves existing data and cleans temporary files
+  ---
+  duration_ms: 180.8264
+  ...
+# Subtest: report output escapes table delimiters and never presents stale weather as fresh
+ok 43 - report output escapes table delimiters and never presents stale weather as fresh
+  ---
+  duration_ms: 2.0612
+  ...
+# Subtest: CLI wiring writes matching orders and report with the configured AI provider
+ok 44 - CLI wiring writes matching orders and report with the configured AI provider
+  ---
+  duration_ms: 360.9296
+  ...
+1..44
+# tests 44
+# suites 0
+# pass 44
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1194.8175

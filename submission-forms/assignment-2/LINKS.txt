@@ -1,0 +1,8 @@
+Public repository:
+https://github.com/ChereddyGowtham11/weather-aware-order-delay-processor
+
+Current combined live + simulated demo video:
+https://github.com/ChereddyGowtham11/weather-aware-order-delay-processor/blob/main/evidence/assignment-2-current-demo.mp4
+
+Separate fixture evidence:
+https://github.com/ChereddyGowtham11/weather-aware-order-delay-processor/blob/main/evidence/delayed-order-fixture/simulated-delay-walkthrough.mp4

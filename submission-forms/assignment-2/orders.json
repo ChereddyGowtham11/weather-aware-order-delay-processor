@@ -1,0 +1,43 @@
+[
+  {
+    "order_id": "1001",
+    "customer": "Alice Smith",
+    "city": "New York",
+    "status": "Pending",
+    "last_checked_at": "2026-11-01T19:23:00.925Z",
+    "weather": {
+      "main": "Clouds",
+      "description": "few clouds"
+    }
+  },
+  {
+    "order_id": "1002",
+    "customer": "Bob Jones",
+    "city": "Mumbai",
+    "status": "Pending",
+    "last_checked_at": "2026-11-01T19:23:00.927Z",
+    "weather": {
+      "main": "Clouds",
+      "description": "overcast clouds"
+    }
+  },
+  {
+    "order_id": "1003",
+    "customer": "Charlie Green",
+    "city": "London",
+    "status": "Pending",
+    "last_checked_at": "2026-11-01T19:23:00.927Z",
+    "weather": {
+      "main": "Clouds",
+      "description": "overcast clouds"
+    }
+  },
+  {
+    "order_id": "1004",
+    "customer": "InvalidCity123",
+    "city": "InvalidCity123",
+    "status": "Pending",
+    "weather_error": "OpenWeatherMap request failed for InvalidCity123 (404)",
+    "last_checked_at": "2026-11-01T19:23:00.927Z"
+  }
+]

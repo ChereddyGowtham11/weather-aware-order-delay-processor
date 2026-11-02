@@ -1,0 +1,194 @@
+
+> test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: lead filter preserves exact boundaries
+ok 1 - lead filter preserves exact boundaries
+  ---
+  duration_ms: 1.4145
+  ...
+# Subtest: only genuine new star timestamps pass checkpoint and dedupe
+ok 2 - only genuine new star timestamps pass checkpoint and dedupe
+  ---
+  duration_ms: 2.7755
+  ...
+# Subtest: profile text is treated as untrusted and fallback stays nonempty
+ok 3 - profile text is treated as untrusted and fallback stays nonempty
+  ---
+  duration_ms: 1.6279
+  ...
+# Subtest: star timestamps respect timezone offsets and reject malformed events
+ok 4 - star timestamps respect timezone offsets and reject malformed events
+  ---
+  duration_ms: 0.7746
+  ...
+# Subtest: duplicates inside one poll are removed and output is chronological without input mutation
+ok 5 - duplicates inside one poll are removed and output is chronological without input mutation
+  ---
+  duration_ms: 0.6452
+  ...
+# Subtest: HTTP 429 retries at most twice
+ok 6 - HTTP 429 retries at most twice
+  ---
+  duration_ms: 2.3042
+  ...
+# Subtest: HTTP 500 retries at most twice
+ok 7 - HTTP 500 retries at most twice
+  ---
+  duration_ms: 0.144
+  ...
+# Subtest: HTTP 502 retries at most twice
+ok 8 - HTTP 502 retries at most twice
+  ---
+  duration_ms: 0.0865
+  ...
+# Subtest: HTTP 503 retries at most twice
+ok 9 - HTTP 503 retries at most twice
+  ---
+  duration_ms: 0.0773
+  ...
+# Subtest: HTTP 504 retries at most twice
+ok 10 - HTTP 504 retries at most twice
+  ---
+  duration_ms: 0.2105
+  ...
+# Subtest: ordinary HTTP 400 fails without retry
+ok 11 - ordinary HTTP 400 fails without retry
+  ---
+  duration_ms: 0.1191
+  ...
+# Subtest: ordinary HTTP 401 fails without retry
+ok 12 - ordinary HTTP 401 fails without retry
+  ---
+  duration_ms: 0.1552
+  ...
+# Subtest: ordinary HTTP 403 fails without retry
+ok 13 - ordinary HTTP 403 fails without retry
+  ---
+  duration_ms: 0.136
+  ...
+# Subtest: ordinary HTTP 404 fails without retry
+ok 14 - ordinary HTTP 404 fails without retry
+  ---
+  duration_ms: 0.2418
+  ...
+# Subtest: ordinary HTTP 422 fails without retry
+ok 15 - ordinary HTTP 422 fails without retry
+  ---
+  duration_ms: 0.2696
+  ...
+# Subtest: network timeout retries and successful response completes
+ok 16 - network timeout retries and successful response completes
+  ---
+  duration_ms: 0.1477
+  ...
+# Subtest: Retry-After seconds and dates plus primary reset are respected case-insensitively
+ok 17 - Retry-After seconds and dates plus primary reset are respected case-insensitively
+  ---
+  duration_ms: 1.7185
+  ...
+# Subtest: long reset fails rather than retrying before server deadline
+ok 18 - long reset fails rather than retrying before server deadline
+  ---
+  duration_ms: 0.272
+  ...
+# Subtest: invalid negative retry headers use fallback
+ok 19 - invalid negative retry headers use fallback
+  ---
+  duration_ms: 0.1074
+  ...
+# Subtest: star retries preserve prior pages and retry same URL
+ok 20 - star retries preserve prior pages and retry same URL
+  ---
+  duration_ms: 1.0898
+  ...
+# Subtest: pagination accumulates pages, resets attempt and delays next page
+ok 21 - pagination accumulates pages, resets attempt and delays next page
+  ---
+  duration_ms: 0.4849
+  ...
+# Subtest: profile failure cannot complete a partial batch and retries preserve pairing
+ok 22 - profile failure cannot complete a partial batch and retries preserve pairing
+  ---
+  duration_ms: 0.2158
+  ...
+# Subtest: commit validates entire batch before mutating state
+ok 23 - commit validates entire batch before mutating state
+  ---
+  duration_ms: 0.4355
+  ...
+# Subtest: exported code compiles and all connections reference existing nodes
+ok 24 - exported code compiles and all connections reference existing nodes
+  ---
+  duration_ms: 2.9692
+  ...
+# Subtest: empty poll returns no profiles and preserves the baseline
+ok 25 - empty poll returns no profiles and preserves the baseline
+  ---
+  duration_ms: 1.8687
+  ...
+# Subtest: star pages deduplicate and sort into a complete profile batch
+ok 26 - star pages deduplicate and sort into a complete profile batch
+  ---
+  duration_ms: 0.704
+  ...
+# Subtest: exact qualification boundaries preserve all processed events for final commit
+ok 27 - exact qualification boundaries preserve all processed events for final commit
+  ---
+  duration_ms: 0.3597
+  ...
+# Subtest: all nonqualifying profiles advance checkpoint and dedupe on next poll
+ok 28 - all nonqualifying profiles advance checkpoint and dedupe on next poll
+  ---
+  duration_ms: 0.3581
+  ...
+# Subtest: mixed batch commits low and high events only after all Slack responses confirm
+ok 29 - mixed batch commits low and high events only after all Slack responses confirm
+  ---
+  duration_ms: 0.4225
+  ...
+# Subtest: incomplete Slack batch never commits even if its responses succeeded
+ok 30 - incomplete Slack batch never commits even if its responses succeeded
+  ---
+  duration_ms: 0.4791
+  ...
+# Subtest: failed or incomplete profile enrichment preserves checkpoint
+ok 31 - failed or incomplete profile enrichment preserves checkpoint
+  ---
+  duration_ms: 0.1698
+  ...
+# Subtest: simulated star notifications are explicitly labelled and have real line breaks
+ok 32 - simulated star notifications are explicitly labelled and have real line breaks
+  ---
+  duration_ms: 1.4665
+  ...
+# Subtest: exported star retry controller leaves state unchanged through exhaustion
+ok 33 - exported star retry controller leaves state unchanged through exhaustion
+  ---
+  duration_ms: 3.9396
+  ...
+# Subtest: exported profile controller cannot commit on failed profile request
+ok 34 - exported profile controller cannot commit on failed profile request
+  ---
+  duration_ms: 0.4962
+  ...
+# Subtest: separate simulated lead workflow has no schedule or production pinned data
+ok 35 - separate simulated lead workflow has no schedule or production pinned data
+  ---
+  duration_ms: 5.5321
+  ...
+# Subtest: exported pagination controller runs without Node URL globals, as in n8n
+ok 36 - exported pagination controller runs without Node URL globals, as in n8n
+  ---
+  duration_ms: 1.0338
+  ...
+1..36
+# tests 36
+# suites 0
+# pass 36
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 128.3925

@@ -40,3 +40,7 @@ See evidence/test-output.txt, evidence/syntax-checks.txt, live-cli-run.png, live
 ## Separate delayed-order fixture demonstration
 
 Run `npm run demo:fixture` (or `npm.cmd run demo:fixture` in Windows PowerShell). The real processOrders function consumes explicitly simulated Rain, Snow, Clouds and invalid-city responses. Outputs go only to evidence/delayed-order-fixture/: simulated-orders.json, simulated-report.md and demonstration.html. A screenshot and a 12-second still-image evidence walkthrough show the actual fixture results. Rain and Snow produce Delayed orders with deterministic fallback apologies. This is not live weather or live AI evidence. The genuine orders.json remains unchanged, verified by a regression test.
+
+## Current submission video
+
+Use evidence/assignment-2-current-demo.mp4 (about 46 seconds). Part 1 is the genuine CLI recording. Part 2 is the separate, explicitly simulated Rain/Snow demonstration using deterministic fallback apologies. Title cards distinguish the sources; the genuine orders.json is preserved. Public video: https://github.com/ChereddyGowtham11/weather-aware-order-delay-processor/blob/main/evidence/assignment-2-current-demo.mp4

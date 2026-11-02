@@ -1,0 +1,8 @@
+Current demo video:
+https://github.com/ChereddyGowtham11/weather-aware-order-delay-processor/blob/main/assignment-1/evidence/assignment-1-current-demo.mp4
+
+Workflow JSON:
+https://github.com/ChereddyGowtham11/weather-aware-order-delay-processor/blob/main/assignment-1/github-lead-sniper.json
+
+Production n8n workflow:
+https://gowtham2911.app.n8n.cloud/workflow/eAWPPlJ4AmZFGYZy

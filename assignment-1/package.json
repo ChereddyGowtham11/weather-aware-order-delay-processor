@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "lint": "node --check lib/leadLogic.mjs && node --check lib/githubRecovery.mjs && node --check tests/leadLogic.test.mjs && node --check tests/workflow.test.mjs && node --check tests/recovery.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

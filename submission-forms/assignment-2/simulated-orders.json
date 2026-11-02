@@ -1,0 +1,54 @@
+{
+  "simulated": true,
+  "weather_source": "Controlled local fixtures; no live weather requests",
+  "apology_source": "deterministic_fallback; no live AI provider invoked",
+  "orders": [
+    {
+      "order_id": "1001",
+      "customer": "Alice Smith",
+      "city": "New York",
+      "status": "Delayed",
+      "weather": {
+        "main": "Rain",
+        "description": "simulated moderate rain"
+      },
+      "delay_reason": "Verified weather condition: Rain",
+      "apology_message": "Hi Alice Smith, your order to New York is delayed due to simulated moderate rain; we appreciate your patience!",
+      "apology_source": "deterministic_fallback",
+      "last_checked_at": "2026-11-02T00:00:00.000Z"
+    },
+    {
+      "order_id": "1002",
+      "customer": "Bob Jones",
+      "city": "Mumbai",
+      "status": "Delayed",
+      "weather": {
+        "main": "Snow",
+        "description": "simulated snow"
+      },
+      "delay_reason": "Verified weather condition: Snow",
+      "apology_message": "Hi Bob Jones, your order to Mumbai is delayed due to simulated snow; we appreciate your patience!",
+      "apology_source": "deterministic_fallback",
+      "last_checked_at": "2026-11-02T00:00:00.000Z"
+    },
+    {
+      "order_id": "1003",
+      "customer": "Charlie Green",
+      "city": "London",
+      "status": "Pending",
+      "weather": {
+        "main": "Clouds",
+        "description": "simulated cloudy weather"
+      },
+      "last_checked_at": "2026-11-02T00:00:00.000Z"
+    },
+    {
+      "order_id": "1004",
+      "customer": "InvalidCity123",
+      "city": "InvalidCity123",
+      "status": "Pending",
+      "weather_error": "SIMULATED invalid city (404)",
+      "last_checked_at": "2026-11-02T00:00:00.000Z"
+    }
+  ]
+}

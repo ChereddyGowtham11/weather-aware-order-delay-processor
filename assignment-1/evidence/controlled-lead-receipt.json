@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "channel": "C0CDH0XHP1V",
+  "message_timestamp": "1793567528.332559",
+  "test_only": true,
+  "simulated_star": true,
+  "profile_source": "Live GitHub GET /users/octocat",
+  "profile_login": "octocat",
+  "followers": 24875,
+  "public_repos": 8,
+  "qualification": "followers > 100 OR public_repos > 50",
+  "ai_pitch": "The Octocat, associated with GitHub, may serve as a relevant outreach contact for discussions related to software development and collaboration on coding platforms.",
+  "ai_source": "Actual n8n gpt-4o-mini Gateway credits run; not the deterministic fallback",
+  "workflow_url": "https://gowtham2911.app.n8n.cloud/workflow/30Gc8h19YHilBeFc",
+  "processed": 1,
+  "notified": 1,
+  "checkpoint": "2026-11-01T21:12:06.720Z",
+  "provenance": "Selected fields transcribed from the visible successful n8n node outputs and Slack API receipt; not a full raw API export"
+}

@@ -1,0 +1,6 @@
+Prompt summaries reconstructed from the AI-assisted implementation and test work (not a verbatim conversation transcript):
+1. Fetch weather for all four orders concurrently using Promise.allSettled, with deferred invocation so synchronous throws and asynchronous failures are isolated.
+2. Preserve a failed order's status and record weather_error without stopping other orders. Mark only Rain, Snow, and Extreme conditions Delayed; clear stale weather and lookup errors appropriately on reruns.
+3. Add an 8-second request timeout and at most two retries for network failures, timeouts, HTTP 429, and 5xx. Respect Retry-After with a 30-second cap; do not retry invalid-city 404 responses.
+4. Generate a grounded one-sentence apology for delayed orders, with a deterministic fallback for missing credentials, provider errors, or invalid responses.
+5. Verify concurrency, partial failures, retry limits, reruns, AI integration, atomic per-file persistence, and matching JSON/Markdown outputs. Add a separately labelled Rain/Snow demonstration and confirm the genuine live orders.json is unchanged. All 45 included tests pass.

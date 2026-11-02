@@ -30,9 +30,13 @@ Input validation requires the supplied four orders, unique IDs and nonempty cust
 
 ## Verification and demonstration
 
-- 44/44 automated tests pass with zero failures; syntax checks pass on v22.14.0.
+- 45/45 automated tests pass with zero failures; syntax checks pass on v22.14.0.
 - The real weather run returned Clouds for New York, Mumbai and London, preserving Pending status.
 - InvalidCity123 returned the expected isolated HTTP 404; the command still completed successfully.
 - Current conditions required no apology. The automated suite exercises Rain, Snow and Extreme, configured AI client wiring, provider failures, timeout/retry limits, malformed input, persistence and full CLI output consistency using clearly controlled fixtures.
 
 See evidence/test-output.txt, evidence/syntax-checks.txt, live-cli-run.png, live-order-report.png and assignment-2-demo.webm. The recording uses a localhost capture helper that executes the actual supplied CLI against live weather; its output and report are shown directly. AI HTTP tests are fixtures, not live provider evidence.
+
+## Separate delayed-order fixture demonstration
+
+Run `npm run demo:fixture` (or `npm.cmd run demo:fixture` in Windows PowerShell). The real processOrders function consumes explicitly simulated Rain, Snow, Clouds and invalid-city responses. Outputs go only to evidence/delayed-order-fixture/: simulated-orders.json, simulated-report.md and demonstration.html. A screenshot and a 12-second still-image evidence walkthrough show the actual fixture results. Rain and Snow produce Delayed orders with deterministic fallback apologies. This is not live weather or live AI evidence. The genuine orders.json remains unchanged, verified by a regression test.

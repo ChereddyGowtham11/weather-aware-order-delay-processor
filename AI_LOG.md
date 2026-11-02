@@ -7,3 +7,5 @@ The CLI wires createAiGenerator into processOrders when a provider key is config
 The test suite verifies both the HTTP provider integration and CLI environment wiring with controlled fixtures. Live weather returned no delaying condition, so there is no claim of a live AI-generated apology in the saved orders.
 
 Each output file is replaced atomically through a unique temporary file and rename; same-process writes are serialized and Windows transient rename failures are bounded. Both files are rendered from the same processed array, without claiming a transactional two-file crash guarantee.
+
+The separately labelled fixture demo uses the real processing function with controlled weather inputs, writes evidence to a separate directory, and checks that live orders.json is unchanged. Its apologies use deterministic fallback; no live AI invocation is claimed.
